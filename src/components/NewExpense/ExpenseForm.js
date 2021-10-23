@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-export default function ExpenseForm(props) {
+export default function ExpenseForm(props) /*Viene de NewExpense*/ {
+  //props.onCancel y props.onSavaExpenseData
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -17,6 +18,7 @@ export default function ExpenseForm(props) {
   };
 
   const submitHandler = (event) => {
+    //Al hacer submit guarda data y la sube
     event.preventDefault();
     const expenseData = {
       title: enteredTitle,
@@ -59,6 +61,7 @@ export default function ExpenseForm(props) {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type='button' onClick={props.onCancel}>Cancelar</button>
         <button type="submit">Agregar gasto</button>
       </div>
     </form>

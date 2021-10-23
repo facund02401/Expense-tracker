@@ -1,9 +1,10 @@
 import React from "react";
 import "./ExpenseFilter.css";
 
-const ExpensesFilter = (props) => {
+const ExpensesFilter = (props) /*recibe selected y onChangeFilter*/ => {
   const dropdownChangeHandler = (event) => {
-    props.onChangeFilter(event.target.value);
+    props.onChangeFilter(event.target.value)
+     /*Pasa el valor del evento como atributo de la funcion, que sube */ 
   };
 
   return (
